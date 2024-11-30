@@ -1,0 +1,74 @@
+<div class="outer">
+    <div class="carddiv">
+        <mat-card class="card">
+            <div class="cardinner">
+                <div style="width: 50%;text-align: center;">
+                    <span><img src="../../../assets/images/Logo.png" alt="logo" width="100px"></span><br>
+                    <span style="font-family:sans-serif; font-size:xx-large;">Create a Fundoo Account</span>
+                </div>
+                <div class="fieldsdiv">
+                    <div class="fields">
+                        <p>
+                            <mat-form-field class="fullwidth" appearance="outline">
+                                <mat-label>First Name</mat-label>
+                                <input matInput placeholder="First Name" required>
+                                <mat-hint></mat-hint>
+                            </mat-form-field>
+                        </p>
+                        <p>
+                            <mat-form-field class="fullwidth" appearance="outline">
+                                <mat-label>Last Name</mat-label>
+                                <input matInput placeholder="Last Name" required>
+                                <mat-hint></mat-hint>
+                            </mat-form-field>
+                        </p>
+                    </div>
+                    <div class="fields">
+                        <p>
+                            <mat-form-field class="fullwidth" appearance="outline">
+                                <mat-label>Email</mat-label>
+                                <input matInput placeholder="Email" required>
+                                <mat-hint></mat-hint>
+                            </mat-form-field>
+                        </p>
+                        <p>
+                            <mat-form-field class="fullwidth" appearance="outline">
+                                <mat-label>Password</mat-label>
+                                <input matInput placeholder="Password" required>
+                                <mat-hint></mat-hint>
+                            </mat-form-field>
+                        </p>
+
+                    </div>
+                </div>
+                <div class="btnsdiv">
+                    <a href="#" routerLink='/login'><button mat-raised-button class="createbtns">Sign in instead</button></a>
+                    <button mat-raised-button color="primary" class="loginbtns">Next</button>
+                </div>
+            </div>
+        </mat-card>
+        <br>
+        <div class="bottom">
+            <div>
+                <mat-form-field class="state">
+                    <mat-label>State</mat-label>
+                    <mat-select>
+                        <!-- <mat-option>None</mat-option>
+                        @for (state of states; track state) {
+                        <mat-option [value]="state">{{state}}</mat-option>
+                        } -->
+                        <mat-option [value]="null">None</mat-option>
+                        <mat-option *ngFor="let state of states" [value]="state">
+                            {{ state }}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div class="hptbtns">
+                <div><button mat-raised-button class="hptbtnshover">Help</button></div>
+                <div><button mat-raised-button class="hptbtnshover">Privacy</button></div>
+                <div><button mat-raised-button class="hptbtnshover">Terms</button></div>
+            </div>
+        </div>
+    </div>
+</div>
