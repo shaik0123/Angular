@@ -1,11 +1,13 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { UserService } from 'src/app/services/User/user.service';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit{
   states: string[] = [
     'Alabama',
     'Alaska',
@@ -58,4 +60,23 @@ export class LoginComponent {
     'Wisconsin',
     'Wyoming',
   ];
+
+  loginForm! : FormGroup;
+  constructor(private formBuilder : FormBuilder, private user : UserService){}
+
+  ngOnInit(): void{
+    this.loginForm = this.formBuilder.group({
+      email : [''],
+      password : ['']
+    })
+  }
+  onSubmit(){
+    let reqData = {
+      email : this.loginForm.value.email,
+      password : this.loginForm.value.password
+    }
+    this.user.login(reqData).subscribe((response: any)=>{
+      console.log(response);
+    })
+  }
 }

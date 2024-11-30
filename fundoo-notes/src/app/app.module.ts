@@ -14,6 +14,8 @@ import { MatOptionModule } from '@angular/material/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SignupComponent } from './pages/signup/signup.component';
 import { ForgotpasswordComponent } from './pages/forgotpassword/forgotpassword.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -33,7 +35,9 @@ import { ForgotpasswordComponent } from './pages/forgotpassword/forgotpassword.c
     MatButtonModule,
     MatSelectModule,
     MatOptionModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
