@@ -6,7 +6,7 @@ import { ForgotpasswordComponent } from './pages/forgotpassword/forgotpassword.c
 
 const routes: Routes = [
   {
-    path:'login',
+    path:'',
     component: LoginComponent,
     pathMatch:'full'
   },
