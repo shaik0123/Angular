@@ -17,5 +17,14 @@ export class UserService {
     }
     return this.httpService.postService('https://localhost:44353/api/User/Login',reqData,false,header);
   }
+
+  register(reqData: any){
+    let header = {
+      headers:new HttpHeaders({
+        'Content-type':'application/json', 
+      })
+    }
+    return this.httpService.postService('https://localhost:44353/api/User/Register',reqData,false,header);
+  }
 }
  
