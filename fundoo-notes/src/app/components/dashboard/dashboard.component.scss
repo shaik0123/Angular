@@ -1,0 +1,43 @@
+.toolbar {
+    width: 100vw;
+    background-color: #fff;
+    border-bottom: 1px solid rgba(163, 163, 163, 0.752);
+    display: flex;
+    justify-content: space-between;
+}
+
+.firstdiv {
+    width: 20%;
+    display: flex;
+    align-items: center;
+}
+
+.seconddiv {
+    width: 50%;
+    height: 80%;
+    display: flex;
+    border-radius: 15px;
+    background-color:rgba(215, 221, 224, 0.459);
+}
+
+.inputsearch {
+    width:42vw;
+    border: none;
+    outline:none;
+    background-color:rgba(233, 237, 239, 0.616);
+    height: 5vh;
+    position: relative;
+    top: 5px;
+    left: 10px;
+}
+
+.thirddiv {
+    width: 20%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.example-spacer {
+    flex: 1 1 auto;
+}

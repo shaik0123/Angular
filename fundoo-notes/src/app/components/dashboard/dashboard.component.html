@@ -1,0 +1,79 @@
+<mat-toolbar class="toolbar">
+    <div class="firstdiv">
+        <div>
+            <button mat-icon-button class="example-icon" (click)="sidenav.toggle()">
+                <img src="../../../assets/icons/menu.png" alt="menuicon">
+            </button>
+        </div>
+        <img src="../../../assets/images/keep.png" alt="keepimg">
+        <span style="color: rgb(99, 99, 99); font-size:x-large;">Keep</span>
+    </div>
+    <div class="seconddiv">
+        <button mat-icon-button class="example-icon favorite-icon">
+            <img src="../../../assets/icons/search.png" alt="searchicon">
+        </button>
+        <span><input class="inputsearch" placeholder="search"></span>
+    </div>
+    <div class="thirddiv">
+        <div>
+            <button mat-icon-button class="example-icon favorite-icon">
+                <img src="../../../assets/icons/refresh.png" alt="menuicon">
+            </button>
+            <button mat-icon-button class="example-icon">
+                <img src="../../../assets/icons/list.png" alt="menuicon">
+            </button>
+            <button mat-icon-button class="example-icon">
+                <img src="../../../assets/icons/settings.png" alt="menuicon">
+            </button>
+        </div>
+        <div>
+            <button mat-icon-button class="example-icon">
+                <img src="../../../assets/icons/apps.png" alt="menuicon">
+            </button>
+            <button mat-icon-button class="example-icon" style="background-color: darkviolet; color: #fff;">
+                <h4>S</h4>
+            </button>
+        </div>
+    </div>
+</mat-toolbar>
+<mat-sidenav-container>
+    <mat-sidenav #sidenav opened="true" mode="side">
+        <mat-nav-list>
+            <div>
+                <button mat-icon-button class="example-icon">
+                    <img src="../../../assets/icons/lightbulb.png" alt="menuicon">
+                </button>
+            </div>
+            <div>
+                <button mat-icon-button class="example-icon">
+                    <img src="../../../assets/icons/notifications.png" alt="menuicon">
+                </button>
+            </div>
+            <div>
+                <button mat-icon-button class="example-icon">
+                    <img src="../../../assets/icons/edit.png" alt="menuicon">
+                </button>
+            </div>
+            <div>
+
+                <button mat-icon-button class="example-icon">
+                    <img src="../../../assets/icons/archive.png" alt="menuicon">
+                </button>
+            </div>
+            <div>
+                <button mat-icon-button class="example-icon">
+                    <img src="../../../assets/icons/delete.png" alt="menuicon">
+                </button>
+            </div>
+        </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <div style="height: 91vh;">
+            <div>1</div>
+            <div>1</div>
+            <div>1</div>
+            <div>1</div>
+            <div>1</div>
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>

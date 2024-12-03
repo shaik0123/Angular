@@ -16,6 +16,15 @@ import { SignupComponent } from './pages/signup/signup.component';
 import { ForgotpasswordComponent } from './pages/forgotpassword/forgotpassword.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatIconModule } from '@angular/material/icon';
+import { MatListModule } from '@angular/material/list';
+import { AddNoteComponent } from './components/add-note/add-note.component';
+import { NoteCardComponent } from './components/note-card/note-card.component';
+
+
 
 
 @NgModule({
@@ -23,7 +32,10 @@ import { HttpClientModule } from '@angular/common/http';
     AppComponent,
     LoginComponent,
     SignupComponent,
-    ForgotpasswordComponent
+    ForgotpasswordComponent,
+    DashboardComponent,
+    AddNoteComponent,
+    NoteCardComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +49,11 @@ import { HttpClientModule } from '@angular/common/http';
     MatOptionModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatToolbarModule,
+    MatSidenavModule,
+    MatIconModule,
+    MatListModule
   ],
   providers: [],
   bootstrap: [AppComponent]

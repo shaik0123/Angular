@@ -1,0 +1,18 @@
+.note-card-main{
+    width: 17vw;
+    height: auto;
+    box-shadow: 1px 1px 4px 1px #888888;
+}
+.note-card-title{
+    display: flex;
+    justify-content: space-between;
+    padding: 1vw;
+}
+.note-card-text{
+    padding: 1vw;
+}
+.note-card-icons{
+    display: flex;
+    justify-content: space-between;
+    padding: 1vw;
+}
