@@ -18,3 +18,4 @@ export class UserService {
     return this.httpService.postService('https://localhost:44353/api/User/Login',reqData,false,header);
   }
 }
+ 
