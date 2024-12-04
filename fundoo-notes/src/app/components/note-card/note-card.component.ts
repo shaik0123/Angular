@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-note-card',
@@ -7,4 +7,6 @@ import { Component } from '@angular/core';
 })
 export class NoteCardComponent {
 
+  @Input() noteCardData:any=[];
+  
 }

@@ -76,7 +76,8 @@ export class LoginComponent implements OnInit{
       password : this.loginForm.value.password
     }
     this.user.login(reqData).subscribe((response: any)=>{
-      console.log(response);
+      console.log(response.data);
+      localStorage.setItem('token',response.data);
     })
   }
 }

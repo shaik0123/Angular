@@ -23,6 +23,9 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { AddNoteComponent } from './components/add-note/add-note.component';
 import { NoteCardComponent } from './components/note-card/note-card.component';
+import { NotesContainerComponent } from './components/notes-container/notes-container.component';
+import { ArchiveContainerComponent } from './components/archive-container/archive-container.component';
+import { TrashContainerComponent } from './components/trash-container/trash-container.component';
 
 
 
@@ -35,7 +38,10 @@ import { NoteCardComponent } from './components/note-card/note-card.component';
     ForgotpasswordComponent,
     DashboardComponent,
     AddNoteComponent,
-    NoteCardComponent
+    NoteCardComponent,
+    NotesContainerComponent,
+    ArchiveContainerComponent,
+    TrashContainerComponent
   ],
   imports: [
     BrowserModule,

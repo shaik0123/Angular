@@ -4,6 +4,9 @@ import { LoginComponent } from './pages/login/login.component';
 import { SignupComponent } from './pages/signup/signup.component';
 import { ForgotpasswordComponent } from './pages/forgotpassword/forgotpassword.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { NotesContainerComponent } from './components/notes-container/notes-container.component';
+import { ArchiveContainerComponent } from './components/archive-container/archive-container.component';
+import { TrashContainerComponent } from './components/trash-container/trash-container.component';
 
 const routes: Routes = [
   {
@@ -24,7 +27,20 @@ const routes: Routes = [
   {
     path:'dashboard',
     component:DashboardComponent,
-    pathMatch:'full'
+    children:[
+      {
+        path:'notes',
+        component:NotesContainerComponent,
+      },
+      {
+        path:'archive',
+        component:ArchiveContainerComponent
+      },
+      {
+        path:'trash',
+        component:TrashContainerComponent
+      }
+    ]
   }
 ];
 
