@@ -20,8 +20,6 @@
     width: 40vw;
     height: auto;
     box-shadow: 1px 1px 4px 1px #888888;
-    position: relative;
-    left: 2vw;
 }
 .add-note-content-title{
     display: flex;
@@ -30,6 +28,12 @@
 }
 .add-note-content-text{
     padding: 1vw;
+}
+.add-note-card-inputs{
+    width: 95%;
+    outline: none;
+    border: none;
+    font-size:medium;
 }
 .add-note-content-icons{
     display: flex;

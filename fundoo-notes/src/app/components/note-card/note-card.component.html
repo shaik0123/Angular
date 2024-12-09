@@ -7,13 +7,46 @@
         <div class="note-card-text">
             <span>{{noteCardData.takeNote}}</span>
         </div>
-        <div class="note-card-icons">
-            <img src="../../../assets/icons/note-card-notification.png" alt="notificationlogo" width="20px">
-            <img src="../../../assets/icons/note-card-add.png" alt="addlogo" width="20px">
-            <img src="../../../assets/icons/note-card-colors.png" alt="colorlogo" width="20px">
-            <img src="../../../assets/icons/note-card-image.png" alt="imagelogo" width="20px">
-            <img src="../../../assets/icons/archive.png" alt="archivelogo" width="20px">
-            <img src="../../../assets/icons/note-card-more.png" alt="morelogo" width="20px">
+        {{noteCardData.colour}}
+        <div class="note-card-trash-icons" *ngIf="container == 'trash'; else notes">
+            <img src="../../../assets/icons/deleteprmt.png" alt="notificationlogo" width="20px" (click)="handleIconsActions('delete')">
+            <img src="../../../assets/icons/restore.png" alt="addlogo" width="20px">
         </div>
+        <ng-template #notes>
+            <div class="note-card-icons">
+                <img src="../../../assets/icons/note-card-notification.png" alt="notificationlogo" width="20px">
+                <img src="../../../assets/icons/note-card-add.png" alt="addlogo" width="20px">
+                <img src="../../../assets/icons/note-card-colors.png" alt="colorlogo" width="20px" [matMenuTriggerFor]="colormenu">
+                <img src="../../../assets/icons/note-card-image.png" alt="imagelogo" width="20px">
+                <div class="note-card-icon-unarchive" *ngIf="container == 'archive'; else unarchive">
+                    <img src="../../../assets/icons/unarchive.png" alt="unarchivelogo" width="20px" (click)="handleIconsActions('unarchive')">
+                </div> 
+                <ng-template #unarchive>
+                    <img src="../../../assets/icons/archive.png" alt="archivelogo" width="20px" (click)="handleIconsActions('archive')">
+                </ng-template>
+                <img src="../../../assets/icons/note-card-more.png" alt="morelogo" width="20px" [matMenuTriggerFor]="moremenu">
+            </div>
+        </ng-template>
     </mat-card>
+    <mat-menu #moremenu="matMenu">
+        <div>
+            <button mat-menu-item (click)="handleIconsActions('trash')">Delete</button>
+        </div>
+    </mat-menu>
+    <mat-menu #colormenu="matMenu">
+        <div class="color-palate-cnt">    
+            <div class="col1" matTooltip="Default" (click)="handleIconsClick('#FFFFFF')"></div>
+            <div class="col2" matTooltip="Coral" (click)="handleIconsClick('#FAAFA8')"></div>
+            <div class="col3" matTooltip="Peach" (click)="handleIconsClick('#F39F76')"></div>
+            <div class="col4" matTooltip="Sand" (click)="handleIconsClick('#FFF8B8')"></div>
+            <div class="col5" matTooltip="Mint" (click)="handleIconsClick('#E2F6D3')"></div>
+            <div class="col6" matTooltip="Sage" (click)="handleIconsClick('#B4DDD3')"></div>
+            <div class="col7" matTooltip="Fog" (click)="handleIconsClick('#D4E4ED')"></div>
+            <div class="col8" matTooltip="Storm" (click)="handleIconsClick('#AECCDC')"></div>
+            <div class="col9" matTooltip="Dusk" (click)="handleIconsClick('#D3BFDB')"></div>
+            <div class="col10" matTooltip="Blossom" (click)="handleIconsClick('#F6E2DD')"></div>
+            <div class="col11" matTooltip="Clay" (click)="handleIconsClick('#E9E3D4')"></div>
+            <div class="col12" matTooltip="Chalk" (click)="handleIconsClick('#EFEFF1')"></div>           
+        </div>
+    </mat-menu>
 </div>

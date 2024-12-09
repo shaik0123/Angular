@@ -14,15 +14,16 @@
                                 <mat-form-field class="fullwidth" appearance="outline">
                                     <mat-label>Email</mat-label>
                                     <input matInput placeholder="Email" formControlName="email" required>
-                                    <mat-hint></mat-hint>
+                                    <mat-error *ngIf="submited &&  loginControls['email']?.hasError('required')">Email is required</mat-error>
+                                    <mat-error *ngIf="submited &&  loginControls['email']?.hasError('pattern')">Incorrect Email Format</mat-error>
                                 </mat-form-field>
                             </p>
                             <p>
                                 <mat-form-field class="fullwidth" appearance="outline">
                                     <mat-label>Password</mat-label>
-                                    <input matInput type="password" placeholder="Password" formControlName="password"
-                                        required>
-                                    <mat-hint></mat-hint>
+                                    <input matInput type="password" placeholder="Password" formControlName="password" required>
+                                    <mat-error *ngIf="submited && loginControls['password']?.hasError('required')">Password is required</mat-error>
+                                    <mat-error *ngIf="submited && loginControls['password']?.hasError('pattern')">Incorrect Password Format</mat-error>
                                 </mat-form-field><br>
                                 <a href="#" routerLink="/forgotpassword" class="anchor">Forgot Password?</a>
                             </p>

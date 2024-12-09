@@ -8,58 +8,7 @@ import { UserService } from 'src/app/services/User/user.service';
   styleUrls: ['./signup.component.scss']
 })
 export class SignupComponent implements OnInit {
-  states: string[] = [
-    'Alabama',
-    'Alaska',
-    'Arizona',
-    'Arkansas',
-    'California',
-    'Colorado',
-    'Connecticut',
-    'Delaware',
-    'Florida',
-    'Georgia',
-    'Hawaii',
-    'Idaho',
-    'Illinois',
-    'Indiana',
-    'Iowa',
-    'Kansas',
-    'Kentucky',
-    'Louisiana',
-    'Maine',
-    'Maryland',
-    'Massachusetts',
-    'Michigan',
-    'Minnesota',
-    'Mississippi',
-    'Missouri',
-    'Montana',
-    'Nebraska',
-    'Nevada',
-    'New Hampshire',
-    'New Jersey',
-    'New Mexico',
-    'New York',
-    'North Carolina',
-    'North Dakota',
-    'Ohio',
-    'Oklahoma',
-    'Oregon',
-    'Pennsylvania',
-    'Rhode Island',
-    'South Carolina',
-    'South Dakota',
-    'Tennessee',
-    'Texas',
-    'Utah',
-    'Vermont',
-    'Virginia',
-    'Washington',
-    'West Virginia',
-    'Wisconsin',
-    'Wyoming',
-  ];
+  
   registerForm! : FormGroup
   constructor(private formbuilder:FormBuilder,private user:UserService) {}
   ngOnInit(): void {
@@ -77,9 +26,9 @@ export class SignupComponent implements OnInit {
       email : this.registerForm.value.email,
       password :this.registerForm.value.password
     }
-    this.user.register(reqData).subscribe((response) => {
-      console.log(response);
-      
-    })
+    // this.user.register(reqData).subscribe((response) => {
+    //   console.log(response);
+
+    // })
   }
 }

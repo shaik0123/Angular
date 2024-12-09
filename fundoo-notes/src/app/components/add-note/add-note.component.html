@@ -1,7 +1,7 @@
-<mat-card class="add-note-card-main" appearance="outlined">
+<mat-card class="add-note-card-main" appearance="outlined" *ngIf="status; else takeNoteCnt;" (click)="handleTakeNote()">
     <div class="add-note-card-content">
         <div>
-            <span>Add a note...</span>
+            <span>Take a note...</span>
         </div>
         <div class="add-note-card-icons">
             <img src="../../../assets/icons/checkbox.png" alt="checkboxlogo" width="20px">
@@ -10,14 +10,14 @@
         </div>
     </div>
 </mat-card>
-<br>
-<!-- <mat-card class="add-note-content-main" appearance="outlined">
-    <div class="add-note-content-title">
-        <span>Title</span>
+<ng-template #takeNoteCnt>
+    <mat-card class="add-note-content-main" appearance="outlined">
+        <div class="add-note-content-title">
+            <input class="add-note-card-inputs" [(ngModel)]="Title" placeholder="Title">
         <img src="../../../assets/icons/pin.png" alt="pinlogo" width="20px">
     </div>
     <div class="add-note-content-text">
-        <span>Add a note...</span>
+        <input class="add-note-card-inputs" [(ngModel)]="TakeNote" placeholder="Take a note...">
     </div>
     <div class="add-note-content-icons">
         <div class="add-note-content-icons-inner">
@@ -31,7 +31,8 @@
             <img src="../../../assets/icons/redo.png" alt="redologo" width="20px">
         </div>
         <div>
-            <button mat-button>close</button>
+            <button mat-button (click)="handleAddNote()">close</button>
         </div>
     </div>
-</mat-card> -->
+</mat-card>
+</ng-template>

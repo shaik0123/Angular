@@ -1,5 +1,5 @@
 <div class="trash-container-notes-div">
     <div *ngFor="let item of notesData">
-        <app-note-card [noteCardData]="item"></app-note-card>
+        <app-note-card [noteCardData]="item" [container]="'trash'" (updateData)="handleUpdateNotesData($event)"></app-note-card>
     </div>
 </div>

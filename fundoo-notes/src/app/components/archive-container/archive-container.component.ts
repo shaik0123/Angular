@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { NotesService } from 'src/app/services/Notes/notes.service';
 
 @Component({
@@ -8,14 +9,21 @@ import { NotesService } from 'src/app/services/Notes/notes.service';
 })
 export class ArchiveContainerComponent implements OnInit {
 
-  notesData:any[]=[];
+  notesData: any[] = [];
 
-  constructor(private notes : NotesService){ }
+  constructor(private notes: NotesService) { }
 
   ngOnInit(): void {
-    this.notes.getAllNotes().subscribe((response:any) =>{
+    this.notes.getAllNotes().subscribe((response: any) => {
       console.log(response.data);
-      this.notesData = response.data.filter((x:{isArchive:boolean; isTrash:boolean}) => x.isArchive == true && x.isTrash == false);
+      this.notesData = response.data.filter((x: { isArchive: boolean; isTrash: boolean }) => x.isArchive == true && x.isTrash == false);
     })
+  }
+  updateData: any = []
+  handleUpdateNotesData($event: { data: any, action: string }) {
+    const { data, action } = $event
+
+    if (action == "unarchive" || action == "trash")
+      this.notesData = this.notesData.filter((note) => note.noteId != data)
   }
 }

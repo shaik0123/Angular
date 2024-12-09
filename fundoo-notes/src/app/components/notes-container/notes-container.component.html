@@ -1,8 +1,8 @@
 <div class="notes-container-takenote-div">
-    <app-add-note></app-add-note>
+    <app-add-note (updateData)="handleUpdateNotesData($event)"></app-add-note>
 </div>
 <div class="notes-container-notes-div">
     <div *ngFor="let item of notesData">
-        <app-note-card [noteCardData]="item"></app-note-card>
+        <app-note-card [noteCardData]="item" [container]="'notes'" (updateData)="handleUpdateNotesData($event)"></app-note-card>
     </div>
 </div>

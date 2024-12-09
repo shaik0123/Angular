@@ -14,4 +14,17 @@ export class HttpService {
   getService(url: string,headers:any){
     return this.httpClient.get(url,headers);
   }
+
+  addNoteService(url: string, noteData: any,headers:any){
+    return this.httpClient.post(url,noteData,headers);
+  }
+
+  deleteNoteService(url: string,headers:any){
+    return this.httpClient.delete(url,headers);
+  }
+
+  patchNoteService(url: string,data:string,headers:any){
+    return this.httpClient.patch(url,data,headers);
+  }
+  
 }

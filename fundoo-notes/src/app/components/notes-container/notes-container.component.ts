@@ -18,4 +18,13 @@ export class NotesContainerComponent implements OnInit {
       this.notesData = response.data.filter((x:{isArchive:boolean; isTrash:boolean}) => x.isArchive == false && x.isTrash == false);
     })
   }
+  updateData:any=[]
+  handleUpdateNotesData($event: {data: any, action: string}){
+    const {data, action} = $event
+
+    if(action == "add")
+      this.notesData = [data, ...this.notesData]
+    else if(action == "archive" || action == "trash")
+      this.notesData = this.notesData.filter((note) => note.noteId != data)
+  }
 }

@@ -40,7 +40,7 @@
     <mat-sidenav #sidenav opened="true" mode="side">
         <mat-nav-list>
             <div>
-                <button mat-icon-button class="example-icon">
+                <button mat-icon-button class="example-icon" (click)="handleRoutes('/dashboard/notes')">
                     <img src="../../../assets/icons/lightbulb.png" alt="menuicon">
                 </button>
             </div>
@@ -56,12 +56,12 @@
             </div>
             <div>
 
-                <button mat-icon-button class="example-icon">
+                <button mat-icon-button class="example-icon" (click)="handleRoutes('/dashboard/archive')">
                     <img src="../../../assets/icons/archive.png" alt="menuicon">
                 </button>
             </div>
             <div>
-                <button mat-icon-button class="example-icon">
+                <button mat-icon-button class="example-icon" (click)="handleRoutes('/dashboard/trash')">
                     <img src="../../../assets/icons/delete.png" alt="menuicon">
                 </button>
             </div>

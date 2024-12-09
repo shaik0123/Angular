@@ -6,16 +6,23 @@ import { NotesService } from 'src/app/services/Notes/notes.service';
   templateUrl: './trash-container.component.html',
   styleUrls: ['./trash-container.component.scss']
 })
-export class TrashContainerComponent implements OnInit{
-  
-  notesData:any[]=[];
+export class TrashContainerComponent implements OnInit {
 
-  constructor(private notes : NotesService){ }
+  notesData: any[] = [];
+
+  constructor(private notes: NotesService) { }
 
   ngOnInit(): void {
-    this.notes.getAllNotes().subscribe((response:any) =>{
+    this.notes.getAllNotes().subscribe((response: any) => {
       console.log(response.data);
-      this.notesData = response.data.filter((x:{isArchive:boolean; isTrash:boolean}) => x.isArchive == false && x.isTrash == true);
+      this.notesData = response.data.filter((x: { isArchive: boolean; isTrash: boolean }) => x.isArchive == false && x.isTrash == true);
     })
+  }
+  updateData: any = []
+  handleUpdateNotesData($event: { data: any, action: string }) {
+    const { data, action } = $event
+
+    if (action == "delete")
+      this.notesData = this.notesData.filter((note) => note.noteId != data)
   }
 }
