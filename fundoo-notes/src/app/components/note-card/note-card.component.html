@@ -1,5 +1,5 @@
 <div class="note-card-main-div">
-    <mat-card class="note-card-main" appearance="outlined">
+    <mat-card id="color" class="note-card-main" appearance="outlined" [style.backgroundColor]='noteCardData.colour'>
         <div class="note-card-title">
             <span>{{noteCardData.title}}</span>
             <img src="../../../assets/icons/pin.png" alt="pinlogo" width="20px">
@@ -7,7 +7,7 @@
         <div class="note-card-text">
             <span>{{noteCardData.takeNote}}</span>
         </div>
-        {{noteCardData.colour}}
+        
         <div class="note-card-trash-icons" *ngIf="container == 'trash'; else notes">
             <img src="../../../assets/icons/deleteprmt.png" alt="notificationlogo" width="20px" (click)="handleIconsActions('delete')">
             <img src="../../../assets/icons/restore.png" alt="addlogo" width="20px">

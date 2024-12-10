@@ -18,9 +18,9 @@ export class NoteCardComponent {
     switch(action){
       case 'delete':
         console.log(action,noteId);
-        // this.note.deleteNote(noteId).subscribe((response)=>{
-        //   console.log(response);
-        // })
+        this.note.deleteNote(noteId).subscribe((response)=>{
+          console.log(response);
+        })
         this.updateData.emit({data:noteId,action})
         break;
       case 'archive':
@@ -39,9 +39,9 @@ export class NoteCardComponent {
         break;
       case 'trash':
         console.log(action);
-        // this.note.trashNote(noteId).subscribe((response)=>{
-        //   console.log(response);
-        // })
+        this.note.trashNote(noteId).subscribe((response)=>{
+          console.log(response);
+        })
         this.updateData.emit({data:noteId,action})
         break;
       default:
@@ -53,9 +53,9 @@ export class NoteCardComponent {
   handleIconsClick(action:string){
     const noteId = this.noteCardData.noteId;
     console.log(noteId,action);
-    this.note.addColor(noteId,action).subscribe((response)=>{
-      console.log(response);
+    this.note.addColor(noteId,action).subscribe((response:any)=>{
+      console.log(response.data);
     })
-    
+    this.updateData.emit({data:{...this.noteCardData,colour: action},action:"color"})
   }
 }

@@ -24,9 +24,9 @@ export class AddNoteComponent {
     }
     this.status = true;
     if (this.Title == "" && this.TakeNote == "") return
-    // this.note.addNote(noteData).subscribe((response)=>{
-    //   console.log(response);
-    // })
+    this.note.addNote(noteData).subscribe((response)=>{
+      console.log(response);
+    })
     this.updateData.emit({data:noteData,action:'add'});
     this.Title=""
     this.TakeNote=""
