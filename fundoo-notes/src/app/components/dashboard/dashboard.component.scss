@@ -41,3 +41,15 @@
 .example-spacer {
     flex: 1 1 auto;
 }
+
+.drawer-icons{
+    display: flex;
+    align-items: center;
+}
+.drawer-icons:hover{
+    background-color:rgb(255, 225, 198);
+    border-radius: 50px;
+}
+.drawer-icon:hover{
+    background-color:rgb(255, 225, 198);
+}

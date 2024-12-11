@@ -10,7 +10,7 @@
         
         <div class="note-card-trash-icons" *ngIf="container == 'trash'; else notes">
             <img src="../../../assets/icons/deleteprmt.png" alt="notificationlogo" width="20px" (click)="handleIconsActions('delete')">
-            <img src="../../../assets/icons/restore.png" alt="addlogo" width="20px">
+            <img src="../../../assets/icons/restore.png" alt="addlogo" width="20px" (click)="handleIconsActions('untrash')">
         </div>
         <ng-template #notes>
             <div class="note-card-icons">

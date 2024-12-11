@@ -44,6 +44,13 @@ export class NoteCardComponent {
         })
         this.updateData.emit({data:noteId,action})
         break;
+      case 'untrash':
+        console.log(action);
+        this.note.untrashNote(noteId).subscribe((response)=>{
+          console.log(response);
+        })
+        this.updateData.emit({data:noteId,action})
+        break;
       default:
         console.log(action);  
     }

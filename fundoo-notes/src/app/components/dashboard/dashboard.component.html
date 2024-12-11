@@ -1,7 +1,7 @@
 <mat-toolbar class="toolbar">
     <div class="firstdiv">
         <div>
-            <button mat-icon-button class="example-icon" (click)="sidenav.toggle()">
+            <button mat-icon-button class="example-icon" (click)="drawertoggle()">
                 <img src="../../../assets/icons/menu.png" alt="menuicon">
             </button>
         </div>
@@ -12,7 +12,7 @@
         <button mat-icon-button class="example-icon favorite-icon">
             <img src="../../../assets/icons/search.png" alt="searchicon">
         </button>
-        <span><input class="inputsearch" placeholder="search"></span>
+        <span><input class="inputsearch" placeholder="search" [(ngModel)]="searchQuery" (input)="handleSearchQuery()"></span>
     </div>
     <div class="thirddiv">
         <div>
@@ -36,40 +36,43 @@
         </div>
     </div>
 </mat-toolbar>
-<mat-sidenav-container>
-    <mat-sidenav #sidenav opened="true" mode="side">
-        <mat-nav-list>
-            <div>
-                <button mat-icon-button class="example-icon" (click)="handleRoutes('/dashboard/notes')">
-                    <img src="../../../assets/icons/lightbulb.png" alt="menuicon">
-                </button>
-            </div>
-            <div>
-                <button mat-icon-button class="example-icon">
-                    <img src="../../../assets/icons/notifications.png" alt="menuicon">
-                </button>
-            </div>
-            <div>
-                <button mat-icon-button class="example-icon">
-                    <img src="../../../assets/icons/edit.png" alt="menuicon">
-                </button>
-            </div>
-            <div>
-
-                <button mat-icon-button class="example-icon" (click)="handleRoutes('/dashboard/archive')">
-                    <img src="../../../assets/icons/archive.png" alt="menuicon">
-                </button>
-            </div>
-            <div>
-                <button mat-icon-button class="example-icon" (click)="handleRoutes('/dashboard/trash')">
-                    <img src="../../../assets/icons/delete.png" alt="menuicon">
-                </button>
-            </div>
-        </mat-nav-list>
-    </mat-sidenav>
-    <mat-sidenav-content>
-        <div style="height: 90vh;">
+<mat-drawer-container class="example-container" [hasBackdrop]="false">
+    <mat-drawer style="width: 200px;" #drawer [mode]="'side'" [opened]="drawerState">
+        <div class="drawer-icons" (click)="handleRoutes('/dashboard/notes')">
+            <button mat-icon-button class="drawer-icon">
+                <img src="../../../assets/icons/lightbulb.png" alt="menuicon">
+            </button>
+            <div>Notes</div>
+        </div>
+        <div class="drawer-icons">
+            <button mat-icon-button class="example-icon">
+                <img src="../../../assets/icons/notifications.png" alt="menuicon">
+            </button>
+            <div>Reminders</div>
+        </div>
+        <div class="drawer-icons">
+            <button mat-icon-button class="example-icon">
+                <img src="../../../assets/icons/edit.png" alt="menuicon">
+            </button>
+            <div>Edit lables</div>
+        </div>
+        <div class="drawer-icons" (click)="handleRoutes('/dashboard/archive')">
+            <button mat-icon-button class="example-icon">
+                <img src="../../../assets/icons/archive.png" alt="menuicon">
+            </button>
+            <div>Archive</div>
+        </div>
+        <div class="drawer-icons" (click)="handleRoutes('/dashboard/trash')">
+            <button mat-icon-button class="example-icon">
+                <img src="../../../assets/icons/delete.png" alt="menuicon">
+            </button>
+            <div>Trash</div>
+        </div>
+    </mat-drawer>
+    <mat-drawer-content>
+       <div style="height: 90vh;">
             <router-outlet></router-outlet>
         </div>
-    </mat-sidenav-content>
-</mat-sidenav-container>
+    </mat-drawer-content>
+  </mat-drawer-container>
+  

@@ -1,8 +1,9 @@
 <div class="notes-container-takenote-div">
     <app-add-note (updateData)="handleUpdateNotesData($event)"></app-add-note>
 </div>
+{{searchQuery}}
 <div class="notes-container-notes-div">
-    <div *ngFor="let item of notesData">
+    <div *ngFor="let item of notesData | search : searchQuery">
         <app-note-card [noteCardData]="item" [container]="'notes'" (updateData)="handleUpdateNotesData($event)"></app-note-card>
     </div>
 </div>

@@ -34,6 +34,9 @@ export class NotesService {
   trashNote(noteId:number){
     return this.httpService.patchNoteService(`https://localhost:44353/api/Note/Trash?id=${noteId}`,"",{headers : this.authHeaders()})
   }
+  untrashNote(noteId:number){
+    return this.httpService.patchNoteService(`https://localhost:44353/api/Note/UnTrash?id=${noteId}`,"",{headers : this.authHeaders()})
+  }
   addColor(noteId:number,colour:string){
     let encodedColour = encodeURIComponent(colour);
     return this.httpService.patchNoteService(`https://localhost:44353/api/Note/Colour?id=${noteId}&colour=${encodedColour}`,"",{headers : this.authHeaders()})
